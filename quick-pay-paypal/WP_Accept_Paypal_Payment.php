@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: PayPal Quick Pay - All Currencies
+Plugin Name: Quick pay paypal - All Currencies
 Version: 1.0
 Plugin URI: https://www.srapsware.com/product/paypal-quick-pay-all-currencies/
 Author: Shiv Singh

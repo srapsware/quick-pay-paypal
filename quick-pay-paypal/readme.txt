@@ -1,4 +1,4 @@
-=== PayPal Quick Pay - All Currencies ===
+=== Quick pay paypal - All Currencies ===
 Contributors: Shiv Singh, Ruralserver, Srapsware
 Donate link: https://www.srapsware.com/product/paypal-quick-pay-all-currencies/
 Tags: Paypal payment, Accept payment for services or product, PayPal donation, wordpress paypal, paypal for wordpress, paypal plugin for wordpress, paypal integration, paypal, buy now, payment, currency,
