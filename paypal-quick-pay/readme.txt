@@ -1,17 +1,17 @@
 === PayPal Quick Pay - All Currencies ===
 Contributors: Shiv Singh, Ruralserver, Srapsware
-Donate link: https://www.srapsware.com
+Donate link: https://www.srapsware.com/product/paypal-quick-pay-all-currencies/
 Tags: Paypal payment, Accept payment for services or product, PayPal donation, wordpress paypal, paypal for wordpress, paypal plugin for wordpress, paypal integration, paypal, buy now, payment, currency,
 Requires at least: 3.0
-Tested up to: 5.3
+Tested up to: 5.4.2
 Stable tag: 4.9.4
 License: GPLv2 or later
 
-Easy to use Wordpress plugin to accept paypal payment for a service or product or donation in one click
+PayPal quick payment is used for getting quick payment in all currencies by Wordpress plugin. You can use in sidebar, page and post by shortcode.
 
 == Description ==
 
-Easy to use Wordpress plugin to accept paypal payment for a service or product or donation in one click. Can be used in the sidebar, posts and pages of your site.
+PayPal quick payment is used for getting quick payment in all currencies by Wordpress plugin. You can use in sidebar, page and post by shortcode.
 
 For information, detailed documentation, video tutorial and updates, please visit the [WordPress PayPal Payment](https://www.srapsware.com/product/paypal-quick-pay-all-currencies/) Plugin Page
 
@@ -43,7 +43,7 @@ For information, detailed documentation, video tutorial and updates, please visi
 
 There are few ways you can use this plugin:
 
-1. Use the sortcode [wp_paypal_payment] to place the payment accept form.
+1. Use the sortcode [paypal_quick_pay] to place the payment accept form.
 2. Add the paypal payment widget to your sidebar widgets.
 3. Call the function from a template file: <?php echo Paypal_payment_accept(); ?>
 4. Use the shortcode with custom parameter option to add multiple different payment widget in different areas of the site.
@@ -62,4 +62,4 @@ There are few ways you can use this plugin:
 Visit the plugin site at https://www.srapsware.com/product/paypal-quick-pay-all-currencies/ for screenshots.
 
 == Changelog ==
-Start Up
+1.0
