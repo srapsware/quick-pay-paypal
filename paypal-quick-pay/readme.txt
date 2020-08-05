@@ -4,7 +4,7 @@ Donate link: https://www.srapsware.com/product/paypal-quick-pay-all-currencies/
 Tags: Paypal payment, Accept payment for services or product, PayPal donation, wordpress paypal, paypal for wordpress, paypal plugin for wordpress, paypal integration, paypal, buy now, payment, currency,
 Requires at least: 3.0
 Tested up to: 5.4.2
-Stable tag: 4.9.4
+Stable tag: 1.0
 License: GPLv2 or later
 
 PayPal quick payment is used for getting quick payment in all currencies by Wordpress plugin. You can use in sidebar, page and post by shortcode.
@@ -59,7 +59,8 @@ There are few ways you can use this plugin:
 
 == Screenshots ==
 
-Visit the plugin site at https://www.srapsware.com/product/paypal-quick-pay-all-currencies/ for screenshots.
+1. Admin Settings
+2. Front End View
 
 == Changelog ==
 1.0
