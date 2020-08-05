@@ -59,7 +59,7 @@ There are few ways you can use this plugin:
 
 == Screenshots ==
 
-1. Admin Settings
+1. Admin Settings View
 2. Front End View
 
 == Changelog ==
