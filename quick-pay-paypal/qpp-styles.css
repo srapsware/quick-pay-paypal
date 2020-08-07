@@ -1,6 +1,6 @@
-.wp_pp_button_selection_section,
-.wp_pp_button_other_amt_section,
-.wp_pp_button_reference_section {
+.qpp_button_selection_section,
+.qpp_button_other_amt_section,
+.qpp_button_reference_section {
   margin-bottom: 10px;
 }
 .wp_paypal_button_widget {
@@ -14,16 +14,16 @@
   max-width: 100%;
 }
 
-.pqp_payment_subject {
+.qpp_payment_subject {
   margin: 10px 0px;
 }
-.pqp_other_amount_label {
+.qpp_other_amount_label {
   margin: 10px 0px;
 }
-.pqp_ref_title_label {
+.qpp_ref_title_label {
   margin: 10px 0px;
 }
-.pqp_payment_button {
+.qpp_payment_button {
   margin: 10px 0px;
 }
 .form-control {
@@ -41,7 +41,7 @@
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.pqp_other_amt_input {
+.qpp_other_amt_input {
   width: 46%;
   margin-bottom: 25px !important;
   height: 31px;

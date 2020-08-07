@@ -1,8 +1,8 @@
 <?php
 
-function pqp_validate_paypl_ipn() {
+function qpp_validate_paypl_ipn() {
 
-    $pqp_ipn_validated = true;
+    $qpp_ipn_validated = true;
     
     // Reading POSTed data directly from POST causes serialization issues with array data in the POST.
     // Instead, read raw POST data from the input stream. 
@@ -49,14 +49,14 @@ function pqp_validate_paypl_ipn() {
     // Inspect IPN validation result and act accordingly
     if (strcmp ($res, "VERIFIED") == 0) {
         // The IPN is verified, process it
-        $pqp_ipn_validated = true;
+        $qpp_ipn_validated = true;
     } else if (strcmp ($res, "INVALID") == 0) {
         // IPN invalid, log for manual investigation
-        $pqp_ipn_validated = false;
+        $qpp_ipn_validated = false;
     }
 
 
-    if (!$pqp_ipn_validated) {
+    if (!$qpp_ipn_validated) {
         // IPN validation failed. Email the admin to notify this event.
         $admin_email = get_bloginfo('admin_email');
         $subject = 'IPN validation failed for a payment';

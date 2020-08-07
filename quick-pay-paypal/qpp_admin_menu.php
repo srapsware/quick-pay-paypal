@@ -23,34 +23,34 @@ function paypal_quick_pay_options_page()
             wp_die('Error! Nonce Security Check Failed! Go back to settings menu and save the settings again.');
         }
 
-        $value1 = filter_input(INPUT_POST, 'wp_pp_payment_value1', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $value2 = filter_input(INPUT_POST, 'wp_pp_payment_value2', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $value3 = filter_input(INPUT_POST, 'wp_pp_payment_value3', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $value4 = filter_input(INPUT_POST, 'wp_pp_payment_value4', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $value5 = filter_input(INPUT_POST, 'wp_pp_payment_value5', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $value6 = filter_input(INPUT_POST, 'wp_pp_payment_value6', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $value1 = filter_input(INPUT_POST, 'qpp_payment_value1', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $value2 = filter_input(INPUT_POST, 'qpp_payment_value2', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $value3 = filter_input(INPUT_POST, 'qpp_payment_value3', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $value4 = filter_input(INPUT_POST, 'qpp_payment_value4', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $value5 = filter_input(INPUT_POST, 'qpp_payment_value5', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $value6 = filter_input(INPUT_POST, 'qpp_payment_value6', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
         update_option('wp_paypal_widget_title_name', sanitize_text_field(stripslashes($_POST["wp_paypal_widget_title_name"])));
-        update_option('wp_pp_payment_email', sanitize_email($_POST["wp_pp_payment_email"]));
+        update_option('qpp_payment_email', sanitize_email($_POST["qpp_payment_email"]));
         update_option('paypal_payment_currency', sanitize_text_field($_POST["paypal_payment_currency"]));
-        update_option('wp_pp_payment_subject', sanitize_text_field(stripslashes($_POST["wp_pp_payment_subject"])));
-        update_option('wp_pp_payment_item1', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item1"])));
-        update_option('wp_pp_payment_value1', $value1);
-        update_option('wp_pp_payment_item2', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item2"])));
-        update_option('wp_pp_payment_value2', $value2);
-        update_option('wp_pp_payment_item3', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item3"])));
-        update_option('wp_pp_payment_value3', $value3);
-        update_option('wp_pp_payment_item4', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item4"])));
-        update_option('wp_pp_payment_value4', $value4);
-        update_option('wp_pp_payment_item5', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item5"])));
-        update_option('wp_pp_payment_value5', $value5);
-        update_option('wp_pp_payment_item6', sanitize_text_field(stripslashes($_POST["wp_pp_payment_item6"])));
-        update_option('wp_pp_payment_value6', $value6);
+        update_option('qpp_payment_subject', sanitize_text_field(stripslashes($_POST["qpp_payment_subject"])));
+        update_option('qpp_payment_item1', sanitize_text_field(stripslashes($_POST["qpp_payment_item1"])));
+        update_option('qpp_payment_value1', $value1);
+        update_option('qpp_payment_item2', sanitize_text_field(stripslashes($_POST["qpp_payment_item2"])));
+        update_option('qpp_payment_value2', $value2);
+        update_option('qpp_payment_item3', sanitize_text_field(stripslashes($_POST["qpp_payment_item3"])));
+        update_option('qpp_payment_value3', $value3);
+        update_option('qpp_payment_item4', sanitize_text_field(stripslashes($_POST["qpp_payment_item4"])));
+        update_option('qpp_payment_value4', $value4);
+        update_option('qpp_payment_item5', sanitize_text_field(stripslashes($_POST["qpp_payment_item5"])));
+        update_option('qpp_payment_value5', $value5);
+        update_option('qpp_payment_item6', sanitize_text_field(stripslashes($_POST["qpp_payment_item6"])));
+        update_option('qpp_payment_value6', $value6);
         update_option('payment_button_type', sanitize_text_field($_POST["payment_button_type"]));
-        update_option('wp_pp_show_other_amount', isset($_POST['wp_pp_show_other_amount']) ? '1' : '-1');
-        update_option('wp_pp_show_ref_box', isset($_POST['wp_pp_show_ref_box']) ? '1' : '-1');
-        update_option('wp_pp_ref_title', sanitize_text_field(stripslashes($_POST["wp_pp_ref_title"])));
-        update_option('wp_pp_return_url', esc_url_raw(sanitize_text_field($_POST["wp_pp_return_url"])));
+        update_option('qpp_show_other_amount', isset($_POST['qpp_show_other_amount']) ? '1' : '-1');
+        update_option('qpp_show_ref_box', isset($_POST['qpp_show_ref_box']) ? '1' : '-1');
+        update_option('qpp_ref_title', sanitize_text_field(stripslashes($_POST["qpp_ref_title"])));
+        update_option('qpp_return_url', esc_url_raw(sanitize_text_field($_POST["qpp_return_url"])));
         update_option('select_currency_text', sanitize_text_field(stripslashes($_POST["select_currency_text"])));
         update_option('enter_amount_text', sanitize_text_field(stripslashes($_POST["enter_amount_text"])));
 
@@ -109,7 +109,7 @@ function paypal_quick_pay_options_page()
                                         <strong>Paypal Email address:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_payment_email" type="text" size="35" value="<?php echo esc_attr(get_option('wp_pp_payment_email')); ?>" />
+                                        <input name="qpp_payment_email" type="text" size="35" value="<?php echo esc_attr(get_option('qpp_payment_email')); ?>" />
                                         <br /><i>This is the Paypal Email address where the payments will go</i><br />
                                     </td>
                                 </tr>
@@ -164,7 +164,7 @@ function paypal_quick_pay_options_page()
                                         <strong>Manually Amount Only:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_show_other_amount" type="checkbox" <?php if (get_option('wp_pp_show_other_amount') != '-1') echo ' checked="checked"'; ?> value="1" />
+                                        <input name="qpp_show_other_amount" type="checkbox" <?php if (get_option('qpp_show_other_amount') != '-1') echo ' checked="checked"'; ?> value="1" />
                                         <i> Tick this checkbox if you want to show only manually amount entered textbox.</i>
                                     </td>
                                 </tr>
@@ -184,7 +184,7 @@ function paypal_quick_pay_options_page()
                                         <strong>Payment Subject:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_payment_subject" type="text" size="35" value="<?php echo esc_attr(get_option('wp_pp_payment_subject')); ?>" />
+                                        <input name="qpp_payment_subject" type="text" size="35" value="<?php echo esc_attr(get_option('qpp_payment_subject')); ?>" />
                                         <br /><i>Enter the Product or service name or the reason for the payment here. The visitors will see this text</i><br />
                                     </td>
                                 </tr>
@@ -194,9 +194,9 @@ function paypal_quick_pay_options_page()
                                         <strong>Payment Option 1:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_payment_item1" type="text" size="25" value="<?php echo esc_attr(get_option('wp_pp_payment_item1')); ?>" />
+                                        <input name="qpp_payment_item1" type="text" size="25" value="<?php echo esc_attr(get_option('qpp_payment_item1')); ?>" />
                                         <strong>Price :</strong>
-                                        <input name="wp_pp_payment_value1" type="text" size="10" value="<?php echo esc_attr(get_option('wp_pp_payment_value1')); ?>" />
+                                        <input name="qpp_payment_value1" type="text" size="10" value="<?php echo esc_attr(get_option('qpp_payment_value1')); ?>" />
                                         <br />
                                     </td>
                                 </tr>
@@ -206,9 +206,9 @@ function paypal_quick_pay_options_page()
                                         <strong>Payment Option 2:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_payment_item2" type="text" size="25" value="<?php echo esc_attr(get_option('wp_pp_payment_item2')); ?>" />
+                                        <input name="qpp_payment_item2" type="text" size="25" value="<?php echo esc_attr(get_option('qpp_payment_item2')); ?>" />
                                         <strong>Price :</strong>
-                                        <input name="wp_pp_payment_value2" type="text" size="10" value="<?php echo esc_attr(get_option('wp_pp_payment_value2')); ?>" />
+                                        <input name="qpp_payment_value2" type="text" size="10" value="<?php echo esc_attr(get_option('qpp_payment_value2')); ?>" />
                                         <br />
                                     </td>
                                 </tr>
@@ -218,9 +218,9 @@ function paypal_quick_pay_options_page()
                                         <strong>Payment Option 3:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_payment_item3" type="text" size="25" value="<?php echo esc_attr(get_option('wp_pp_payment_item3')); ?>" />
+                                        <input name="qpp_payment_item3" type="text" size="25" value="<?php echo esc_attr(get_option('qpp_payment_item3')); ?>" />
                                         <strong>Price :</strong>
-                                        <input name="wp_pp_payment_value3" type="text" size="10" value="<?php echo esc_attr(get_option('wp_pp_payment_value3')); ?>" />
+                                        <input name="qpp_payment_value3" type="text" size="10" value="<?php echo esc_attr(get_option('qpp_payment_value3')); ?>" />
                                         <br />
                                     </td>
                                 </tr>
@@ -230,9 +230,9 @@ function paypal_quick_pay_options_page()
                                         <strong>Payment Option 4:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_payment_item4" type="text" size="25" value="<?php echo esc_attr(get_option('wp_pp_payment_item4')); ?>" />
+                                        <input name="qpp_payment_item4" type="text" size="25" value="<?php echo esc_attr(get_option('qpp_payment_item4')); ?>" />
                                         <strong>Price :</strong>
-                                        <input name="wp_pp_payment_value4" type="text" size="10" value="<?php echo esc_attr(get_option('wp_pp_payment_value4')); ?>" />
+                                        <input name="qpp_payment_value4" type="text" size="10" value="<?php echo esc_attr(get_option('qpp_payment_value4')); ?>" />
                                         <br />
                                     </td>
                                 </tr>
@@ -242,9 +242,9 @@ function paypal_quick_pay_options_page()
                                         <strong>Payment Option 5:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_payment_item5" type="text" size="25" value="<?php echo esc_attr(get_option('wp_pp_payment_item5')); ?>" />
+                                        <input name="qpp_payment_item5" type="text" size="25" value="<?php echo esc_attr(get_option('qpp_payment_item5')); ?>" />
                                         <strong>Price :</strong>
-                                        <input name="wp_pp_payment_value5" type="text" size="10" value="<?php echo esc_attr(get_option('wp_pp_payment_value5')); ?>" />
+                                        <input name="qpp_payment_value5" type="text" size="10" value="<?php echo esc_attr(get_option('qpp_payment_value5')); ?>" />
                                         <br />
                                     </td>
                                 </tr>
@@ -254,9 +254,9 @@ function paypal_quick_pay_options_page()
                                         <strong>Payment Option 6:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_payment_item6" type="text" size="25" value="<?php echo esc_attr(get_option('wp_pp_payment_item6')); ?>" />
+                                        <input name="qpp_payment_item6" type="text" size="25" value="<?php echo esc_attr(get_option('qpp_payment_item6')); ?>" />
                                         <strong>Price :</strong>
-                                        <input name="wp_pp_payment_value6" type="text" size="10" value="<?php echo esc_attr(get_option('wp_pp_payment_value6')); ?>" />
+                                        <input name="qpp_payment_value6" type="text" size="10" value="<?php echo esc_attr(get_option('qpp_payment_value6')); ?>" />
                                         <br /><i>Enter the name of the service or product and the price. eg. Enter "Basic service - $10" in the Payment Option text box and "10.00" in the price text box to accept a payment of $10 for "Basic service". Leave the Payment Option and Price fields empty if u don't want to use that option. For example, if you have 3 price options then fill in the top 3 and leave the rest empty.</i>
                                     </td>
                                 </tr>
@@ -266,7 +266,7 @@ function paypal_quick_pay_options_page()
                                         <strong>Show Reference Text Box:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_show_ref_box" type="checkbox" <?php if (get_option('wp_pp_show_ref_box') != '-1') echo ' checked="checked"'; ?> value="1" />
+                                        <input name="qpp_show_ref_box" type="checkbox" <?php if (get_option('qpp_show_ref_box') != '-1') echo ' checked="checked"'; ?> value="1" />
                                         <i> Tick this checkbox if you want your visitors to be able to enter a reference text like email or web address.</i>
                                     </td>
                                 </tr>
@@ -276,7 +276,7 @@ function paypal_quick_pay_options_page()
                                         <strong>Reference Text Box Title:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_ref_title" type="text" size="35" value="<?php echo esc_attr(get_option('wp_pp_ref_title')); ?>" />
+                                        <input name="qpp_ref_title" type="text" size="35" value="<?php echo esc_attr(get_option('qpp_ref_title')); ?>" />
                                         <br /><i>Enter a title for the Reference text box (ie. Your Web Address). The visitors will see this text.</i><br />
                                     </td>
                                 </tr>
@@ -286,7 +286,7 @@ function paypal_quick_pay_options_page()
                                         <strong>Return URL from PayPal:</strong>
                                     </td>
                                     <td align="left">
-                                        <input name="wp_pp_return_url" type="text" size="60" value="<?php echo esc_url(get_option('wp_pp_return_url')); ?>" />
+                                        <input name="qpp_return_url" type="text" size="60" value="<?php echo esc_url(get_option('qpp_return_url')); ?>" />
                                         <br /><i>Enter a return URL (could be a Thank You page). PayPal will redirect visitors to this page after Payment.</i><br />
                                     </td>
                                 </tr>
