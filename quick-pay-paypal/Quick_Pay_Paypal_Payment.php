@@ -18,9 +18,9 @@ if (!defined('ABSPATH')) { //Exit if accessed directly
 define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_VERSION', '1.0');
 define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_URL', plugins_url('', __FILE__));
 
-include_once('shortcode_view.php');
-include_once('pqp_admin_menu.php');
-include_once('pqp_paypal_utility.php');
+include_once('qpp_shortcode_view.php');
+include_once('qpp_admin_menu.php');
+include_once('qpp_paypal_utility.php');
 
 function wp_pp_plugin_install()
 {
@@ -52,7 +52,7 @@ add_filter('plugin_action_links_'.plugin_basename(__FILE__), 'paypal_quick_pay_a
 
 function paypal_quick_pay_add_plugin_page_settings_link( $links ) {
 	$links[] = '<a href="' .
-		admin_url( 'options-general.php?page=paypal-quick-pay/pqp_admin_menu.php' ) .
+		admin_url( 'options-general.php?page=paypal-quick-pay/qpp_admin_menu.php' ) .
 		'">' . __('Settings') . '</a>';
 	return $links;
 }
@@ -243,7 +243,7 @@ function paypal_quick_pay_widget_control()
 
     function paypal_quick_pay_init()
     {
-        wp_register_style('pqp-styles', WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_URL . '/pqp-styles.css');
+        wp_register_style('pqp-styles', WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_URL . '/qpp-styles.css');
         wp_enqueue_style('pqp-styles');
 
         //Widget code
