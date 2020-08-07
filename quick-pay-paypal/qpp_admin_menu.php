@@ -1,16 +1,16 @@
 <?php
 
 // Displays PayPal Payment Accept Options menu
-function paypal_payment_add_option_pages()
+function paypal_quick_pay_add_option_pages()
 {
     if (function_exists('add_options_page')) {
-        add_options_page('PayPal Quick Pay', 'PayPal Quick Pay', 'manage_options', __FILE__, 'paypal_payment_options_page');
+        add_options_page('PayPal Quick Pay', 'PayPal Quick Pay', 'manage_options', __FILE__, 'paypal_quick_pay_options_page');
     }
 }
-// Insert the paypal_payment_add_option_pages in the 'admin_menu'
-add_action('admin_menu', 'paypal_payment_add_option_pages');
+// Insert the paypal_quick_pay_add_option_pages in the 'admin_menu'
+add_action('admin_menu', 'paypal_quick_pay_add_option_pages');
 
-function paypal_payment_options_page()
+function paypal_quick_pay_options_page()
 {
 
     if (!current_user_can('manage_options')) {
