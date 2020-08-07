@@ -46,7 +46,7 @@ function qpp_plugin_install()
 
 register_activation_hook(__FILE__, 'qpp_plugin_install');
 
-add_shortcode('paypal_quick_pay_box_for_any_amount', 'qpp_buy_now_any_amt_handler');
+add_shortcode('quick_pay_paypal_box_for_any_amount', 'qpp_buy_now_any_amt_handler');
 
 add_filter('plugin_action_links_'.plugin_basename(__FILE__), 'paypal_quick_pay_add_plugin_page_settings_link');
 
