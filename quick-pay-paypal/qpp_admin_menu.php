@@ -64,7 +64,7 @@ function paypal_quick_pay_options_page()
 ?>
 
     <div class=wrap>
-        <h2>PayPal Quick Pay - All Currencies v<?php echo WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_VERSION; ?></h2>
+        <h2>PayPal Quick Pay - All Currencies v<?php echo QPP_PLUGIN_VERSION; ?></h2>
 
         <div id="poststuff">
             <div id="post-body">

@@ -15,8 +15,8 @@ if (!defined('ABSPATH')) { //Exit if accessed directly
     exit;
 }
 
-define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_VERSION', '1.0');
-define('WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_URL', plugins_url('', __FILE__));
+define('QPP_PLUGIN_VERSION', '1.0');
+define('QPP_PLUGIN_URL', plugins_url('', __FILE__));
 
 include_once('qpp_shortcode_view.php');
 include_once('qpp_admin_menu.php');
@@ -243,7 +243,7 @@ function paypal_quick_pay_widget_control()
 
     function paypal_quick_pay_init()
     {
-        wp_register_style('pqp-styles', WP_PAYPAL_PAYMENT_ACCEPT_PLUGIN_URL . '/qpp-styles.css');
+        wp_register_style('pqp-styles', QPP_PLUGIN_URL . '/qpp-styles.css');
         wp_enqueue_style('pqp-styles');
 
         //Widget code
