@@ -74,7 +74,7 @@ function pqp_buy_now_button_shortcode($args)
     return $output;
 }
 
-function Paypal_payment_accept()
+function Paypal_Quick_Pay_Accept()
 {
     $paypal_email = get_option('wp_pp_payment_email');
     $payment_currency = get_option('paypal_payment_currency');
@@ -216,7 +216,7 @@ function wp_ppp_process($content)
 {
     if (strpos($content, "<!-- paypal_quick_pay -->") !== FALSE) {
         $content = preg_replace('/<p>\s*<!--(.*)-->\s*<\/p>/i', "<!--$1-->", $content);
-        $content = str_replace('<!-- paypal_quick_pay -->', Paypal_payment_accept(), $content);
+        $content = str_replace('<!-- paypal_quick_pay -->', Paypal_Quick_Pay_Accept(), $content);
     }
     return $content;
 }
@@ -228,7 +228,7 @@ function show_paypal_quick_pay_widget($args)
     $paypal_quick_pay_widget_title_name_value = get_option('wp_paypal_widget_title_name');
     echo $before_widget;
     echo $before_title . $paypal_quick_pay_widget_title_name_value . $after_title;
-    echo Paypal_payment_accept();
+    echo Paypal_Quick_Pay_Accept();
     echo $after_widget;
 }
 
@@ -264,7 +264,7 @@ function paypal_quick_pay_widget_control()
     }
 
     add_filter('the_content', 'wp_ppp_process');
-    add_shortcode('paypal_quick_pay', 'Paypal_payment_accept');
+    add_shortcode('paypal_quick_pay', 'Paypal_Quick_Pay_Accept');
     if (!is_admin()) {
         add_filter('widget_text', 'do_shortcode');
     }

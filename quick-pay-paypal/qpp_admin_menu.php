@@ -82,7 +82,7 @@ function paypal_quick_pay_options_page()
                                 <li>Configure the options below and then add the shortcode <strong>[paypal_quick_pay]</strong> to a post or page (where you want the payment button)</li>
                                 <li>Use the shortcode with custom parameter options to add multiple different payment widgets with different configuration.
                                     <a href="https://www.srapsware.com/product/paypal-quick-pay-all-currencies/" target="_blank">View shortcode documentation</a></li>
-                                <li>Call the function from a template file: <strong>&lt;?php echo Paypal_payment_accept(); ?&gt;</strong></li>
+                                <li>Call the function from a template file: <strong>&lt;?php echo Paypal_Quick_Pay_Accept(); ?&gt;</strong></li>
                                 <li>Use the <strong>PayPal Quick Pay</strong> Widget from the Widgets menu</li>
                             </ol>
                         </div>

@@ -45,7 +45,7 @@ There are few ways you can use this plugin:
 
 1. Use the sortcode [paypal_quick_pay] to place the payment accept form.
 2. Add the paypal payment widget to your sidebar widgets.
-3. Call the function from a template file: <?php echo Paypal_payment_accept(); ?>
+3. Call the function from a template file: <?php echo Paypal_Quick_Pay_Accept(); ?>
 4. Use the shortcode with custom parameter option to add multiple different payment widget in different areas of the site.
 
 == Installation ==
