@@ -41,6 +41,7 @@ function qpp_plugin_install()
     add_option('qpp_show_other_amount', '-1');
     add_option('qpp_show_ref_box', '1');
     add_option('qpp_ref_title', 'Your Email Address');
+    add_option('enable_sendbox', '1');
     add_option('qpp_return_url', home_url());
 }
 
@@ -99,8 +100,17 @@ function Paypal_Quick_Pay_Accept()
     $qpp_return_url = get_option('qpp_return_url');
     $select_currency_text = get_option('select_currency_text');
     $enter_amount_text = get_option('enter_amount_text');
+    $enable_sendbox = get_option('enable_sendbox');
 
     /* === Paypal form === */
+
+    if($enable_sendbox == 1)
+    {
+        $paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/websc';
+    }else{
+        $paypal_url = 'https://www.paypal.com/cgi-bin/webscr';
+    }
+
     $output = '';
     $output .= '<div id="accept_paypal_payment_form">';
     $output .= '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="wp_accept_pp_button_form_classic">';

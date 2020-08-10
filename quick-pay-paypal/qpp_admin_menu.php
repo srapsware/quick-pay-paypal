@@ -53,6 +53,7 @@ function paypal_quick_pay_options_page()
         update_option('qpp_return_url', esc_url_raw(sanitize_text_field($_POST["qpp_return_url"])));
         update_option('select_currency_text', sanitize_text_field(stripslashes($_POST["select_currency_text"])));
         update_option('enter_amount_text', sanitize_text_field(stripslashes($_POST["enter_amount_text"])));
+        update_option('enable_sendbox', $_POST["enable_sendbox"]);
 
         echo '<div id="message" class="updated fade"><p><strong>';
         echo 'Options Updated!';
@@ -61,6 +62,7 @@ function paypal_quick_pay_options_page()
 
     $paypal_payment_currency = stripslashes(get_option('paypal_payment_currency'));
     $payment_button_type = stripslashes(get_option('payment_button_type'));
+    $enable_sendbox = get_option('enable_sendbox');
 ?>
 
     <div class=wrap>
@@ -154,6 +156,19 @@ function paypal_quick_pay_options_page()
             <?php _e('<option value="CHF"') ?><?php if ($paypal_payment_currency == "CHF") echo " selected " ?><?php _e('>Swiss franc</option>') ?>
             <?php _e('<option value="THB"') ?><?php if ($paypal_payment_currency == "THB") echo " selected " ?><?php _e('>Thai baht</option>') ?>
             <?php _e('<option value="USD"') ?><?php if ($paypal_payment_currency == "USD") echo " selected " ?><?php _e('>United States dollar</option>') ?>
+        </select>
+                                        <br /><i>This is the currency for your visitors to make Payments or Donations in.</i><br />
+                                    </td>
+                                </tr>
+
+                                <tr valign="top">
+                                    <td width="25%" align="left">
+                                        <strong>Enable sendbox: </strong>
+                                    </td>
+                                    <td align="left">
+        <select id="enable_sendbox" name="enable_sendbox">
+            <?php _e('<option value="1"') ?><?php if ($enable_sendbox == "1") echo " selected " ?><?php _e('>Yes</option>') ?>
+            <?php _e('<option value="0"') ?><?php if ($enable_sendbox == "0") echo " selected " ?><?php _e('>No</option>') ?>
         </select>
                                         <br /><i>This is the currency for your visitors to make Payments or Donations in.</i><br />
                                     </td>
