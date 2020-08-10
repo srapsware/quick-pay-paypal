@@ -31,8 +31,8 @@ function qpp_validate_paypl_ipn() {
 
 
     // Step 2: POST IPN data back to PayPal to validate
-    $myPost['method'] => 'POST';
-	$myPost['timeout'] => 30;
+    $myPost['method'] = 'POST';
+	$myPost['timeout'] = 30;
 
     $res = wp_remote_post('https://www.paypal.com/cgi-bin/webscr', $myPost);
 

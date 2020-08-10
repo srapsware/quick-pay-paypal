@@ -121,8 +121,8 @@ function paypal_quick_pay_options_page()
                                         <strong>Select Currency Text:</strong>
                                     </td>
                                     <td align="left">
-                                    <input name="select_currency_text" type="text" size="35" value="<?php echo esc_attr(get_option('select_currency_text')); ?>" />
-                                    <br /><i> It will show before select currency option .</i>
+                                        <input name="select_currency_text" type="text" size="35" value="<?php echo esc_attr(get_option('select_currency_text')); ?>" />
+                                        <br /><i> It will show before select currency option .</i>
                                     </td>
                                 </tr>
 
@@ -131,32 +131,32 @@ function paypal_quick_pay_options_page()
                                         <strong>Choose Payment Default Currency: </strong>
                                     </td>
                                     <td align="left">
-        <select id="paypal_payment_currency" name="paypal_payment_currency">
-            <?php _e('<option value="AUD"') ?><?php if ($paypal_payment_currency == "AUD") echo " selected " ?><?php _e('>Australian dollar</option>') ?>
-            <?php _e('<option value="BRL"') ?><?php if ($paypal_payment_currency == "BRL") echo " selected " ?><?php _e('>Brazilian real</option>') ?>
-            <?php _e('<option value="CAD"') ?><?php if ($paypal_payment_currency == "CAD") echo " selected " ?><?php _e('>Canadian dollar</option>') ?>
-            <?php _e('<option value="CZK"') ?><?php if ($paypal_payment_currency == "CZK") echo " selected " ?><?php _e('>Czech koruna</option>') ?>
-            <?php _e('<option value="DKK"') ?><?php if ($paypal_payment_currency == "DKK") echo " selected " ?><?php _e('>Danish krone</option>') ?>
-            <?php _e('<option value="EUR"') ?><?php if ($paypal_payment_currency == "EUR") echo " selected " ?><?php _e('>Euro</option>') ?>
-            <?php _e('<option value="HKD"') ?><?php if ($paypal_payment_currency == "HKD") echo " selected " ?><?php _e('>Hong Kong dollar</option>') ?>
-            <?php _e('<option value="HUF"') ?><?php if ($paypal_payment_currency == "HUF") echo " selected " ?><?php _e('>Hungarian forint</option>') ?>
-            <?php _e('<option value="INR"') ?><?php if ($paypal_payment_currency == "INR") echo " selected " ?><?php _e('>Indian rupee</option>') ?>
-            <?php _e('<option value="ILS"') ?><?php if ($paypal_payment_currency == "ILS") echo " selected " ?><?php _e('>Israeli new shekel</option>') ?>
-            <?php _e('<option value="JPY"') ?><?php if ($paypal_payment_currency == "JPY") echo " selected " ?><?php _e('>Japanese yen</option>') ?>
-            <?php _e('<option value="MYR"') ?><?php if ($paypal_payment_currency == "MYR") echo " selected " ?><?php _e('>Malaysian ringgit</option>') ?>
-            <?php _e('<option value="MXN"') ?><?php if ($paypal_payment_currency == "MXN") echo " selected " ?><?php _e('>Mexican peso</option>') ?>
-            <?php _e('<option value="TWD"') ?><?php if ($paypal_payment_currency == "TWD") echo " selected " ?><?php _e('>New Taiwan dollar</option>') ?>
-            <?php _e('<option value="NZD"') ?><?php if ($paypal_payment_currency == "NZD") echo " selected " ?><?php _e('>Norwegian krone</option>') ?>
-            <?php _e('<option value="PHP"') ?><?php if ($paypal_payment_currency == "PHP") echo " selected " ?><?php _e('>Philippine peso</option>') ?>
-            <?php _e('<option value="PLN"') ?><?php if ($paypal_payment_currency == "PLN") echo " selected " ?><?php _e('>Polish złoty</option>') ?>
-            <?php _e('<option value="GBP"') ?><?php if ($paypal_payment_currency == "GBP") echo " selected " ?><?php _e('>Pound sterling</option>') ?>
-            <?php _e('<option value="RUB"') ?><?php if ($paypal_payment_currency == "RUB") echo " selected " ?><?php _e('>Russian ruble</option>') ?>
-            <?php _e('<option value="SGD"') ?><?php if ($paypal_payment_currency == "SGD") echo " selected " ?><?php _e('>Singapore dollar</option>') ?>
-            <?php _e('<option value="SEK"') ?><?php if ($paypal_payment_currency == "SEK") echo " selected " ?><?php _e('>Swedish krona</option>') ?>
-            <?php _e('<option value="CHF"') ?><?php if ($paypal_payment_currency == "CHF") echo " selected " ?><?php _e('>Swiss franc</option>') ?>
-            <?php _e('<option value="THB"') ?><?php if ($paypal_payment_currency == "THB") echo " selected " ?><?php _e('>Thai baht</option>') ?>
-            <?php _e('<option value="USD"') ?><?php if ($paypal_payment_currency == "USD") echo " selected " ?><?php _e('>United States dollar</option>') ?>
-        </select>
+                                        <select id="paypal_payment_currency" name="paypal_payment_currency">
+                                            <?php _e('<option value="AUD"') ?><?php if ($paypal_payment_currency == "AUD") echo " selected " ?><?php _e('>Australian dollar</option>') ?>
+                                            <?php _e('<option value="BRL"') ?><?php if ($paypal_payment_currency == "BRL") echo " selected " ?><?php _e('>Brazilian real</option>') ?>
+                                            <?php _e('<option value="CAD"') ?><?php if ($paypal_payment_currency == "CAD") echo " selected " ?><?php _e('>Canadian dollar</option>') ?>
+                                            <?php _e('<option value="CZK"') ?><?php if ($paypal_payment_currency == "CZK") echo " selected " ?><?php _e('>Czech koruna</option>') ?>
+                                            <?php _e('<option value="DKK"') ?><?php if ($paypal_payment_currency == "DKK") echo " selected " ?><?php _e('>Danish krone</option>') ?>
+                                            <?php _e('<option value="EUR"') ?><?php if ($paypal_payment_currency == "EUR") echo " selected " ?><?php _e('>Euro</option>') ?>
+                                            <?php _e('<option value="HKD"') ?><?php if ($paypal_payment_currency == "HKD") echo " selected " ?><?php _e('>Hong Kong dollar</option>') ?>
+                                            <?php _e('<option value="HUF"') ?><?php if ($paypal_payment_currency == "HUF") echo " selected " ?><?php _e('>Hungarian forint</option>') ?>
+                                            <?php _e('<option value="INR"') ?><?php if ($paypal_payment_currency == "INR") echo " selected " ?><?php _e('>Indian rupee</option>') ?>
+                                            <?php _e('<option value="ILS"') ?><?php if ($paypal_payment_currency == "ILS") echo " selected " ?><?php _e('>Israeli new shekel</option>') ?>
+                                            <?php _e('<option value="JPY"') ?><?php if ($paypal_payment_currency == "JPY") echo " selected " ?><?php _e('>Japanese yen</option>') ?>
+                                            <?php _e('<option value="MYR"') ?><?php if ($paypal_payment_currency == "MYR") echo " selected " ?><?php _e('>Malaysian ringgit</option>') ?>
+                                            <?php _e('<option value="MXN"') ?><?php if ($paypal_payment_currency == "MXN") echo " selected " ?><?php _e('>Mexican peso</option>') ?>
+                                            <?php _e('<option value="TWD"') ?><?php if ($paypal_payment_currency == "TWD") echo " selected " ?><?php _e('>New Taiwan dollar</option>') ?>
+                                            <?php _e('<option value="NZD"') ?><?php if ($paypal_payment_currency == "NZD") echo " selected " ?><?php _e('>Norwegian krone</option>') ?>
+                                            <?php _e('<option value="PHP"') ?><?php if ($paypal_payment_currency == "PHP") echo " selected " ?><?php _e('>Philippine peso</option>') ?>
+                                            <?php _e('<option value="PLN"') ?><?php if ($paypal_payment_currency == "PLN") echo " selected " ?><?php _e('>Polish złoty</option>') ?>
+                                            <?php _e('<option value="GBP"') ?><?php if ($paypal_payment_currency == "GBP") echo " selected " ?><?php _e('>Pound sterling</option>') ?>
+                                            <?php _e('<option value="RUB"') ?><?php if ($paypal_payment_currency == "RUB") echo " selected " ?><?php _e('>Russian ruble</option>') ?>
+                                            <?php _e('<option value="SGD"') ?><?php if ($paypal_payment_currency == "SGD") echo " selected " ?><?php _e('>Singapore dollar</option>') ?>
+                                            <?php _e('<option value="SEK"') ?><?php if ($paypal_payment_currency == "SEK") echo " selected " ?><?php _e('>Swedish krona</option>') ?>
+                                            <?php _e('<option value="CHF"') ?><?php if ($paypal_payment_currency == "CHF") echo " selected " ?><?php _e('>Swiss franc</option>') ?>
+                                            <?php _e('<option value="THB"') ?><?php if ($paypal_payment_currency == "THB") echo " selected " ?><?php _e('>Thai baht</option>') ?>
+                                            <?php _e('<option value="USD"') ?><?php if ($paypal_payment_currency == "USD") echo " selected " ?><?php _e('>United States dollar</option>') ?>
+                                        </select>
                                         <br /><i>This is the currency for your visitors to make Payments or Donations in.</i><br />
                                     </td>
                                 </tr>
@@ -166,10 +166,10 @@ function paypal_quick_pay_options_page()
                                         <strong>Enable sendbox: </strong>
                                     </td>
                                     <td align="left">
-        <select id="enable_sendbox" name="enable_sendbox">
-            <?php _e('<option value="1"') ?><?php if ($enable_sendbox == "1") echo " selected " ?><?php _e('>Yes</option>') ?>
-            <?php _e('<option value="0"') ?><?php if ($enable_sendbox == "0") echo " selected " ?><?php _e('>No</option>') ?>
-        </select>
+                                        <select id="enable_sendbox" name="enable_sendbox">
+                                            <?php _e('<option value="1"') ?><?php if ($enable_sendbox == "1") echo " selected " ?><?php _e('>Yes</option>') ?>
+                                            <?php _e('<option value="0"') ?><?php if ($enable_sendbox == "0") echo " selected " ?><?php _e('>No</option>') ?>
+                                        </select>
                                         <br /><i>This is the currency for your visitors to make Payments or Donations in.</i><br />
                                     </td>
                                 </tr>
@@ -189,8 +189,8 @@ function paypal_quick_pay_options_page()
                                         <strong>Enter Amount Text:</strong>
                                     </td>
                                     <td align="left">
-                                    <input name="enter_amount_text" type="text" size="35" value="<?php echo esc_attr(get_option('enter_amount_text')); ?>" />
-                                    <br /><i> It will show before amount input textbox.</i>
+                                        <input name="enter_amount_text" type="text" size="35" value="<?php echo esc_attr(get_option('enter_amount_text')); ?>" />
+                                        <br /><i> It will show before amount input textbox.</i>
                                     </td>
                                 </tr>
 
@@ -347,4 +347,4 @@ function paypal_quick_pay_options_page()
         </div> <!-- end of .poststuff and post-body -->
     </div><!-- end of .wrap -->
 <?php
-                                                                                                                                            }
+}
