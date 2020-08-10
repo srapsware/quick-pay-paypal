@@ -31,10 +31,20 @@ function qpp_validate_paypl_ipn() {
 
 
     // Step 2: POST IPN data back to PayPal to validate
-    $myPost['method'] => 'POST';
-	$myPost['timeout'] => 30;
+    $ch = curl_init('https://www.paypal.com/cgi-bin/webscr');
+    curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 
-    $res = wp_remote_post('https://www.paypal.com/cgi-bin/webscr', $myPost);
+    if (!($res = curl_exec($ch))) {
+        // error_log("Got " . curl_error($ch) . " when processing IPN data");
+        curl_close($ch);
+        exit;
+    }
+    curl_close($ch);
 
     // Inspect IPN validation result and act accordingly
     if (strcmp ($res, "VERIFIED") == 0) {
