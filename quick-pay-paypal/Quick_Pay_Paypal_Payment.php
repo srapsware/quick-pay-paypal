@@ -42,7 +42,6 @@ function qpp_plugin_install()
     add_option('qpp_show_ref_box', '1');
     add_option('qpp_ref_title', 'Your Email Address');
     add_option('qpp_return_url', home_url());
-    add_option('enable_sendbox', '1');
 }
 
 register_activation_hook(__FILE__, 'qpp_plugin_install');
